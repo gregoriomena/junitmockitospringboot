@@ -52,7 +52,7 @@
 			</ul>
 		</span>
 		<span id="sec25">
-			<h3>5. Introducción JUnit 5</h3> 
+			<h3>5. Introducción JUnit 5</h3>
 			<ul>
 				<li>JUnit 4 tenía aproximadamente 10 años cuando salió la versión 5</li>
 				<li>Incluye programación funcional y lambda</li>
