@@ -107,8 +107,10 @@ class CuentaTest {
     void testDineroInsuficienteException() {
         Cuenta cuenta = new Cuenta("Juan Perez", new BigDecimal("2345.87"));
 
-        assertThrows(DineroInsuficienteException.class, () ->{
+        DineroInsuficienteException exception = assertThrows(DineroInsuficienteException.class, () ->{
             cuenta.debito(new BigDecimal(3000));
         });
+
+        assertEquals("No hay dinero suficiente en la cuenta", exception.getMessage());
     }
 }
