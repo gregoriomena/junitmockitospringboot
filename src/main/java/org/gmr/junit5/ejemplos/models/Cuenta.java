@@ -6,6 +6,35 @@ public class Cuenta {
     private String persona;
     private BigDecimal saldo;
 
+    public Cuenta(String persona, BigDecimal saldo) {
+
+        this.persona = persona;
+        this.saldo = saldo;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (!(obj instanceof  Cuenta)){
+            return false;
+        }
+
+        Cuenta cuenta = (Cuenta) obj;
+        if (persona == null && saldo == null){
+            return cuenta.getPersona() == null && cuenta.getSaldo() == null;
+        }
+
+        if (persona == null){
+            return cuenta.getPersona() == null && saldo.equals(cuenta.getSaldo());
+        }
+
+        if (saldo == null){
+            return cuenta.getSaldo() == null && persona.equals(cuenta.getPersona());
+        }
+
+        return persona.equals(cuenta.getPersona()) && saldo.equals(cuenta.getSaldo());
+    }
+
     public String getPersona() {
         return persona;
     }

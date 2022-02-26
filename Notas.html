@@ -36,6 +36,8 @@
 					<li><a href="#sec25">5. Introducción JUnit 5</a></li>
 					<li><a href="#sec26">6. Creando y configurando el proyecto con JUnit 5</a></li>
 					<li><a href="#sec27">7. Escribiendo y ejecutando primeras pruebas unitarias con Assertions</a></li>
+					<li>8. Escribiendo test para el saldo</li>
+					<li><a href="#sec29">9. Test driven development TDD con JUnit</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -85,6 +87,32 @@
 			<br /><img src="./imagenes/0207_03.png" />
 			<br /><br />Atajo para ejecutar los tests<br />
 			<br /><img src="./imagenes/0207_04.png" />
+		</span>
+		<span id="sec29">
+			<h3>9. Test driven development TDD con JUnit</h3>
+			<ol>
+				<li>
+					Se desarrolla un test para un caso de aceptación de la nueva funcionalidad. Fallará porque la funcionalidad no está implementada (Rojo).
+				</li>
+				<li>
+					Se hacen los cambios mínimos para que el test pase. (Verde)
+				</li>
+				<li>
+					Se refactoriza
+				</li>
+				<li>
+					Repetir
+					<ul>
+						<li>Se repiten estos pasos añadiendo nuevos casos hasta cubrir todos los tests de aceptación de la funcionalidad.</li>
+						<li>Para el ejemplo, primero creamos el test que validaba que dos instancias de Cuenta con los mismos valores las considera iguales y luego modificamos la clase Cuenta (testReferenciaCuentaWhenParamsEquals)</li>
+						<li>El siguiente paso fue crear el test que validaba que dos instancias de Cuenta con distintos valores las considera distintas y luego modificamos la clase Cuenta (testReferenciaCuentaWhenParamsNotEquals)</li>
+						<li>Luego verifica que funciona bien si el atributo "Persona" es null en alguna de las instancias a comparar (testReferenciaCuentaPersonaNull)</li>
+						<li>Lo mismo que el punto anterior para el atributo saldo (testReferenciaCuentaSaldoNull)</li>
+						<li>También se añade un test para verificar el correctofuncionamiento si el objeto a comparar no es de tipo Cuenta (testReferenciaCuentaObjetoNoInstanceOfCuenta)</li>
+						<li>Y por último si el objeto a comparar es null (testReferenciaCuentaNull)</li>
+					</ul>
+				</li>
+			</ol>
 		</span>
 	</body>
 </html>
