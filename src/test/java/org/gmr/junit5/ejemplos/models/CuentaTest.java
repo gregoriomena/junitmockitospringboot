@@ -92,4 +92,13 @@ class CuentaTest {
         Cuenta cuenta = new Cuenta(null, new BigDecimal("2345.87"));
         assertNotEquals(cuenta, null);
     }
+
+    @Test
+    void testDebitoCuenta() {
+
+        Cuenta cuenta = new Cuenta("Juan Perez", new BigDecimal("2345.87"));
+        cuenta.debito(new BigDecimal(345));
+
+        assertEquals(2000, cuenta.getSaldo().intValue());
+    }
 }

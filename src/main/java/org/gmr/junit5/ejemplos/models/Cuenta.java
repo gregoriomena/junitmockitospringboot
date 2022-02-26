@@ -12,6 +12,10 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
+    public void debito(BigDecimal monto){
+
+    }
+
     @Override
     public boolean equals(Object obj) {
 
