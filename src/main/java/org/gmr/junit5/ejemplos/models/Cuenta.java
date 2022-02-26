@@ -1,5 +1,7 @@
 package org.gmr.junit5.ejemplos.models;
 
+import org.gmr.junit5.ejemplos.exceptions.DineroInsuficienteException;
+
 import java.math.BigDecimal;
 
 public class Cuenta {
@@ -14,6 +16,11 @@ public class Cuenta {
 
     public void debito(BigDecimal monto){
 
+        if (this.saldo.compareTo(monto) < 0){
+            throw new DineroInsuficienteException("No hay dinero suficiente en la cuenta");
+        }
+
+        this.saldo = saldo.subtract(monto);
     }
 
     @Override

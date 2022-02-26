@@ -1,5 +1,6 @@
 package org.gmr.junit5.ejemplos.models;
 
+import org.gmr.junit5.ejemplos.exceptions.DineroInsuficienteException;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -100,5 +101,14 @@ class CuentaTest {
         cuenta.debito(new BigDecimal(345));
 
         assertEquals(2000, cuenta.getSaldo().intValue());
+    }
+
+    @Test
+    void testDineroInsuficienteException() {
+        Cuenta cuenta = new Cuenta("Juan Perez", new BigDecimal("2345.87"));
+
+        assertThrows(DineroInsuficienteException.class, () ->{
+            cuenta.debito(new BigDecimal(3000));
+        });
     }
 }

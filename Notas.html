@@ -39,6 +39,7 @@
 					<li>8. Escribiendo test para el saldo</li>
 					<li><a href="#sec29">9. Test driven development TDD con JUnit</a></li>
 					<li><a href="#sec210">10. TDD para debito y crédito</a></li>
+					<li><a href="#sec211">11. Probando y afirmando excepciones con assertThrows en JUnit 5</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -121,6 +122,22 @@
 				<li>Implemento el test testDebitoCuenta para verificar la funcionalidad 'debito' que resta una cantidad al saldo</li>
 				<li>Implemento la funcionalidad, pero en blanco, sólo para que el test compile y al ejecutarlo falle</li>
 				<li>Implemento la funcionalidad completa para que el test pase</li>
+			</ol>
+		</span>
+		<span id="sec211">
+			<h3>11. Probando y afirmando excepciones con assertThrows en JUnit 5</h3>
+			<ol>
+				<li>Implemento el test testDineroInsuficienteException para verificar la funcionalidad 'debito' cuando no hay dinero suficiente en la cuenta
+					<ul>
+						<li>Disponemos de un assert para indicar que se espera una excepción: assertThrows</li>
+						<li>JUnit 5 nos permite expresiones lambda, que podemos usar en assertThrows</li>
+					</ul>
+				</li>
+				<li>
+				La funcionalidad ya existe, ejecuto el test y falla
+				<br /><img src="./imagenes/0211_01.png" />
+				</li>
+				<li>Actualizo el método para que cumpla con la nueva funcionalidad (realizar la validación para verificar que hay dinero suficiente) y el test queda en verde</li>
 			</ol>
 		</span>
 	</body>
